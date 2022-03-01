@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post">
+    <label th:text="${msg}"></label>
+    用户名
+    <input type="text" name="username"/>
+    <br/>手机号
+    <input type="text" name="phone"/>
+    <br/>老师
+    <input type="radio" id="teacher" name="role"/>
+    学生
+    <input type="radio" id="student" checked="checked" name="role">
+    <br/>工作室名称
+    <input type="text" name="studioid"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
