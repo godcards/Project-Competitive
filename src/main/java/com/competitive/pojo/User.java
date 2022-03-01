@@ -14,5 +14,5 @@ public class User {
    private String userIcon;
    private String phone;
    private String role;
-   private String studioId;
+   private int studioId;
 }

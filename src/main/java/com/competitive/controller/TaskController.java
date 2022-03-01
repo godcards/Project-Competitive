@@ -21,9 +21,18 @@ public class TaskController {
         List<Task> tasks = taskMapper.selAllTask();
         return tasks;
     }
-    @@RequestMapping
-    public Task insTask(){
 
+    @RequestMapping("/insert")
+    @ResponseBody
+    public int insTask(Task task){
+        return taskMapper.insTask(task);
     }
+
+    @RequestMapping("/upd")
+    @ResponseBody
+    public int updTask(Task task){
+        return taskMapper.updTask(task);
+    }
+
 
 }
