@@ -10,8 +10,8 @@ public interface TaskMapper {
     @Select("select * from plan where task_title=#{task_title}")
     Task selplanByTask(String taskTitle);
 
-    @Select("select * from title")
-    List<Task> selAllTask();
+    @Select("select task_title,task_content,author_id from task where author_id=#{authorId}")
+    Task selTaskById(String authorId);
 
     @Insert("insert into studio(task_title,task_content,author_id) values(#{task_title},#{task_content},#{author_id})")
     int insTask(Task task);

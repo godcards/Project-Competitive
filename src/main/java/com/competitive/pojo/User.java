@@ -13,6 +13,6 @@ public class User {
    private int password;
    private String userIcon;
    private String phone;
-   private String role;
+   private int role;
    private int studioId;
 }

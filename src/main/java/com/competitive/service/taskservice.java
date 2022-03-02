@@ -13,12 +13,12 @@ public class taskservice {
     @Autowired
     TaskMapper taskMapper;
 
-    public Task selplanByTask(String taskTitle){
-        return taskMapper.selplanByTask(taskTitle);
+    public Task selTaskById(String authorId){
+        return taskMapper.selTaskById(authorId);
     }
 
-    public List<Task> selAllTask(){
-        return taskMapper.selAllTask();
+    public Task selplanByTask(String taskTitle){
+        return taskMapper.selplanByTask(taskTitle);
     }
 
     public int insTask(Task task){

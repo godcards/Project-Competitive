@@ -16,11 +16,13 @@ public class userservice{
     public User seluserById(int userId){
         return userMapper.seluserById(userId);
     }
-    public List<User> selAlluser(){
-        return userMapper.selAlluser();
-    }
+
     public int InsUser(User user){
         return userMapper.insuser(user);
+    }
+
+    public User seluserpass(String userName,int password){
+        return userMapper.seluserpass(userName,password);
     }
 
 }

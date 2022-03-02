@@ -15,14 +15,13 @@ public class TaskController {
     @Autowired
     TaskMapper taskMapper;
 
-    @RequestMapping("/sqlt")
+    @RequestMapping("/mysql")
     @ResponseBody
-    public List<Task> selAllTask(){
-        List<Task> tasks = taskMapper.selAllTask();
-        return tasks;
+    public Task selTaskById(String authorId){
+        return taskMapper.selTaskById(authorId);
     }
 
-    @RequestMapping("/insert")
+    @RequestMapping("/insertt")
     @ResponseBody
     public int insTask(Task task){
         return taskMapper.insTask(task);

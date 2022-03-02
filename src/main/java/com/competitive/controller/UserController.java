@@ -17,14 +17,23 @@ public class UserController {
     @Autowired
     private StudioMapper studioMapper;
 
-
-
-    @RequestMapping("/sql")
-    @ResponseBody
-    public List<User> quire(){
-        List<User> users = userMapper.selAlluser();
-        return users;
+    @RequestMapping("/")
+    public String tolonin(){
+        return "/login";
     }
+
+    @RequestMapping("/mobile/userLogin")
+    public String login(@RequestParam("userName") String userName,@RequestParam("password") int password,Model model){
+        User seluserpass = userMapper.seluserpass(userName, password);
+        if (seluserpass != null){
+            return "redirect:/main";
+        }else {
+            model.addAttribute("msg","账号密码不对");
+            return "login";
+        }
+    }
+
+
     @RequestMapping("/sqlall/{userId}/")
     @ResponseBody
     public String quireByname(@PathVariable int userId){
@@ -41,3 +50,4 @@ public class UserController {
         return "login";
     }
 }
+

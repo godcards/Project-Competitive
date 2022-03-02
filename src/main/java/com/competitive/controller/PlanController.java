@@ -16,14 +16,14 @@ public class PlanController {
     @Autowired
     PlanMapper planMapper;
 
-    @RequestMapping("")
+    @RequestMapping("/z")
     @ResponseBody
     public Plan selplanByTitle(String planTitle){
         Plan plan = planMapper.selplanByTitle(planTitle);
         return plan;
     }
 
-    @RequestMapping("")
+    @RequestMapping("/Z")
     @ResponseBody
     public List<Plan> selAllplan(){
         List<Plan> plans = planMapper.selAllplan();
