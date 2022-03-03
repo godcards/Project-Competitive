@@ -6,20 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class StudioController {
 
     @Autowired
     StudioMapper studioMapper;
 
+    //查询所有工作室
     @RequestMapping("/stu")
-    @ResponseBody
     public List<String> SelStudio(){
-        List<String> studio = studioMapper.SelStudio();
-        return studio;
+        return studioMapper.SelStudio();
     }
-
 }

@@ -13,6 +13,9 @@ public interface UserMapper {
     @Select("select * from user where user_id=#{user_id}")
     User seluserById(int userId);
 
+    @Select("select user_id from user where user_name=#{userName}")
+    User selUserId(String userName);
+
     @Select("select user_name,password from user where user_name=#{userName} and password=#{password}")
     User seluserpass(String userName,int password);
 

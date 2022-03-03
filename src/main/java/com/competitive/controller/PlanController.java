@@ -7,27 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class PlanController {
 
     @Autowired
     PlanMapper planMapper;
 
-    @RequestMapping("/z")
-    @ResponseBody
+    //查询计划根据标题名
+    @RequestMapping("/selPlanByTitle")
     public Plan selplanByTitle(String planTitle){
-        Plan plan = planMapper.selplanByTitle(planTitle);
-        return plan;
+        return planMapper.selplanByTitle(planTitle);
     }
 
-    @RequestMapping("/Z")
-    @ResponseBody
+    //查询所有计划
+    @RequestMapping("/selAllPlan")
     public List<Plan> selAllplan(){
-        List<Plan> plans = planMapper.selAllplan();
-        return plans;
+        return planMapper.selAllplan();
     }
 
 }

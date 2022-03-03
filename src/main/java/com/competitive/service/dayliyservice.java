@@ -13,12 +13,12 @@ import java.util.List;
     @Autowired
     DayliyMapper dayliyMapper;
 
-    public List<Dayliy> selAlldayliy(){
-        return dayliyMapper.selAlldayliy();
+    public List<Dayliy> selAllDay(){
+        return dayliyMapper.selAllDay();
     }
 
-    public List<Dayliy> seldayliyByName(int dayId,String dayName){
-        return dayliyMapper.seldayliyByName(dayId,dayName);
+    public List<Dayliy> selDayByName(String dayName){
+        return dayliyMapper.selDayByName(dayName);
     }
 
     public int intDayId(Dayliy dayliy){
@@ -27,6 +27,10 @@ import java.util.List;
 
     public int upDayName(Dayliy dayliy){
         return dayliyMapper.updDayName(dayliy);
+    }
+
+    public int delDay(int dayId,String dayName){
+        return dayliyMapper.delDayName(dayName,dayId);
     }
 
 }

@@ -13,22 +13,27 @@ public class taskservice {
     @Autowired
     TaskMapper taskMapper;
 
-    public Task selTaskById(String authorId){
+    //查询任务根据标题
+    public List<Task> selTaskById(String authorId){
         return taskMapper.selTaskById(authorId);
     }
 
-    public Task selplanByTask(String taskTitle){
-        return taskMapper.selplanByTask(taskTitle);
+    //查询任务根据作者的名字
+    public List<Task> selTaskBytitle(String taskTitle){
+        return taskMapper.selTaskBytitle(taskTitle);
     }
 
+    //添加任务
     public int insTask(Task task){
         return taskMapper.insTask(task);
     }
 
+    //更改任务
     public int updTask(Task task){
         return taskMapper.updTask(task);
     }
 
+    //删除任务
     public int delTask(int taskId){
         return taskMapper.delTask(taskId);
     }

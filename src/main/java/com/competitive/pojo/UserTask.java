@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserTask {
     private String userId;
-    private String userprojectId;
     private String taskId;
 }
