@@ -3,9 +3,7 @@ package com.competitive.controller;
 import com.competitive.dao.StudioMapper;
 import com.competitive.pojo.Studio;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,8 +15,20 @@ public class StudioController {
     StudioMapper studioMapper;
 
     //查询所有工作室
-    @RequestMapping("/stu")
-    public List<String> SelStudio(){
-        return studioMapper.SelStudio();
+    @RequestMapping("/studio/allStudio")
+    public List<String> SelectAllStudio(){
+        return studioMapper.SelectAllStudio();
+    }
+
+    //添加工作室
+    @RequestMapping("/studio/insert")
+    public int InsertStudio(Studio studio){
+        return studioMapper.InsertStudio(studio);
+    }
+
+    //更新工作室
+    @RequestMapping("/studio/update")
+    public int UpdateStudio(int studioId){
+        return studioMapper.UpdateStudio(studioId);
     }
 }

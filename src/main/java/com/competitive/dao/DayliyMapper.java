@@ -8,18 +8,24 @@ import java.util.List;
 @Mapper
 public interface DayliyMapper {
 
+
+    //查询所有日报
     @Select("select * from dayliy")
-    List<Dayliy> selAllDay();
+    List<Dayliy> SelectAllDay();
 
+    //查询你自己的日报根据name来查询
     @Select("select * from dayliy where day_name=#{dayName} order by day_id asc")
-    List<Dayliy> selDayByName(String dayName);
+    List<Dayliy> SelectDayByName(String dayName);
 
-    @Insert("insert into dayliy(day_text,day_name,create_time) values(#{day_text},#{day_name},#{create_time})")
-    int intDayId(Dayliy dayliy);
+    //添加日报
+    @Insert("insert into dayliy(day_text,day_name,create_time) values(#{dayText},#{dayName},#{createTime})")
+    int InsertDayId(Dayliy dayliy);
 
-    @Update("update dayliy set day_text = #{day_text},update_time = #{update_time}")
-    int updDayName(Dayliy dayliy);
+    //修改日报
+    @Update("update dayliy set day_text = #{dayText},update_time = #{updateTime}")
+    int UpdateDayName(Dayliy dayliy);
 
-    @Delete("delete from dayliy where day_id=#{dayId} and day_Name=#{dayName}")
-    int delDayName(String dayName,int dayId);
+    //删除日报根据name和id
+    @Delete("delete from dayliy where day_id=#{dayId} and day_name=#{dayName}")
+    int DeleteDayName(String dayName,int dayId);
 }

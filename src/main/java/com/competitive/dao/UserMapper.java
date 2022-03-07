@@ -6,23 +6,27 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import java.util.List;
-
 @Mapper
 public interface UserMapper {
-    @Select("select * from user where user_id=#{user_id}")
-    User seluserById(int userId);
 
+    //查询用户所有的信息根据id
+    @Select("select * from user where user_id=#{userId}")
+    User SelectUserById(int userId);
+
+    //查询用户的id根据用户名
     @Select("select user_id from user where user_name=#{userName}")
-    User selUserId(String userName);
+    int SelectUserId(String userName);
 
-    @Select("select user_name,password from user where user_name=#{userName} and password=#{password}")
-    User seluserpass(String userName,int password);
+    //登陆实现
+    @Select("select user_name,password from user where user_name=#{userName}")
+    User SelectUserNamePassWord(String userName);
 
-    @Insert("insert into user(user_name,phone,role,studio_id) values (#{user_name},#{phone},#{role},#{studio_id})")
-    int insuser(User user);
+    //添加用户(注册)
+    @Insert("insert into user(user_name,phone,role,studio_id) values (#{userName},#{phone},#{role},#{studioId})")
+    int InsertUser(User user);
 
-    @Update("update user set user_name = #{user_name},phone = #{phone},password = #{password} ,user_icon = #{user_icon} where user_id = #{user_id}")
-    int upduser(User user);
+    //更改用户的信息
+    @Update("update user set user_name = #{userName},phone = #{phone},password = #{password} ,user_icon = #{userIcon} where user_id = #{userId}")
+    int UpdateUser(User user);
 
 }

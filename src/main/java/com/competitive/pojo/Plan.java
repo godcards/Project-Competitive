@@ -16,6 +16,6 @@ public class Plan {
     private String planDetial;
     private String type;
     private String planTitle;
-    private Date create_time;
-    private Date update_time;
+    private Date createTime;
+    private Date updateTime;
 }

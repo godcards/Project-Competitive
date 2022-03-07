@@ -13,11 +13,11 @@ import java.util.List;
 public interface StudioMapper {
 
     @Select("select studio_name from studio")
-    List<String> SelStudio();
+    List<String> SelectAllStudio();
 
-    @Insert("insert into studio(studio_name) values(#{studio})")
-    int InsStudio(String studioName);
+    @Insert("insert into studio(studio_name) values(#{studioName})")
+    int InsertStudio(Studio studio);
 
-    @Update("update task set update_time = #{update_time} where task_id = #{task_id}")
-    int updStudio(Studio studio);
+    @Update("update task set studio_name = #{studioName} where studio_id = #{studioId}")
+    int UpdateStudio(int studioId);
 }

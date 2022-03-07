@@ -12,11 +12,15 @@ public class studioservice {
     @Autowired
     private StudioMapper studioMapper;
 
-    public List<String> SelStudio(){
-        return studioMapper.SelStudio();
+    public List<String> SelectAllStudio(){
+        return studioMapper.SelectAllStudio();
     }
 
-    public int InsStudio(String studioName){
-        return studioMapper.InsStudio(studioName);
+    public int InsertStudio(Studio studio){
+        return studioMapper.InsertStudio(studio);
+    }
+
+    public int UpdateStudio(int studioId){
+        return studioMapper.UpdateStudio(studioId);
     }
 }

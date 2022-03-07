@@ -13,24 +13,29 @@ import java.util.List;
     @Autowired
     DayliyMapper dayliyMapper;
 
-    public List<Dayliy> selAllDay(){
-        return dayliyMapper.selAllDay();
+    //查询所有日报
+    public List<Dayliy> SelectAllDay(){
+        return dayliyMapper.SelectAllDay();
     }
 
-    public List<Dayliy> selDayByName(String dayName){
-        return dayliyMapper.selDayByName(dayName);
+    //查询你自己的日报根据name来查询
+    public List<Dayliy> SelectDayByName(String dayName){
+        return dayliyMapper.SelectDayByName(dayName);
     }
 
-    public int intDayId(Dayliy dayliy){
-        return dayliyMapper.intDayId(dayliy);
+    //添加日报
+    public int InsertDayId(Dayliy dayliy){
+        return dayliyMapper.InsertDayId(dayliy);
     }
 
-    public int upDayName(Dayliy dayliy){
-        return dayliyMapper.updDayName(dayliy);
+    //修改日报
+    public int UpdateDayName(Dayliy dayliy){
+        return dayliyMapper.UpdateDayName(dayliy);
     }
 
-    public int delDay(int dayId,String dayName){
-        return dayliyMapper.delDayName(dayName,dayId);
+    //删除日报根据name和id
+    public int DeleteDayName(int dayId,String dayName){
+        return dayliyMapper.DeleteDayName(dayName,dayId);
     }
 
 }

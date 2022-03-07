@@ -10,9 +10,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Dayliy {
-    private int day_id;
-    private String day_text;
-    private String day_name;
-    private Date create_time;
-    private Date update_time;
+    private int dayId;
+    private String dayText;
+    private String dayName;
+    private Date createTime;
+    private Date updateTime;
 }

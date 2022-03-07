@@ -11,4 +11,5 @@ public class CompetitiveApplication {
 		SpringApplication.run(CompetitiveApplication.class, args);
 	}
 
+
 }

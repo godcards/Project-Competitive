@@ -15,6 +15,6 @@ public class Task {
     private int taskId;
     private String taskContent;
     private String authorId;
-    private Date create_time;
-    private Date update_time;
+    private Date createTime;
+    private Date updateTime;
 }

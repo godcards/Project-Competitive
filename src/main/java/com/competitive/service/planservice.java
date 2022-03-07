@@ -2,7 +2,6 @@ package com.competitive.service;
 
 
 import com.competitive.dao.PlanMapper;
-import com.competitive.dao.TaskMapper;
 import com.competitive.pojo.Plan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,16 +14,29 @@ public class planservice {
     @Autowired
     PlanMapper planMapper;
 
-    public Plan selplanByTitle(String planTitle){
-        return planMapper.selplanByTitle(planTitle);
+    //查询计划根据标题名
+    public Plan SelectPlanByTitle(String planTitle){
+        return planMapper.SelectPlanByTitle(planTitle);
     }
 
-    public List<Plan> selAllplan(){
-        return planMapper.selAllplan();
+    //查询所有计划
+    public List<Plan> SelectAllPlan(){
+        return planMapper.SelectAllPlan();
     }
 
-    public int insplan(Plan plan){
-        return planMapper.insplan(plan);
+    //添加计划
+    public int InsertPlan(Plan plan){
+        return planMapper.InsertPlan(plan);
+    }
+
+    //删除计划
+    public int DeletePlan(int planId){
+        return planMapper.DeletePlan(planId);
+    }
+
+    //更改计划
+    public int UpdatePlan(int planId){
+        return planMapper.UpdatePlan(planId);
     }
 
 }

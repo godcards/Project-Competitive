@@ -17,3 +17,13 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+shiro:
+  loginUrl: /login.html
+  sessionManager:
+  # disable URL session rewriting
+    sessionIdUrlRewritingEnabled: false
+logging:
+  level:
+    com:
+      competitive:
+        dao=debug:

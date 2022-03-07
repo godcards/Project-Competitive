@@ -15,13 +15,13 @@ public class TaskController {
     @Autowired
     TaskMapper taskMapper;
 
-    //查询任务根据作者的名字  你发布的任务 去获取当前的用户Id
+    //查询任务根据标题
     @RequestMapping("/task/selByTitle")
     public List<Task> selTaskBytitle(String taskTitle, HttpSession session){
         return taskMapper.selTaskBytitle(taskTitle);
     }
 
-    //查询任务根据标题
+    //查询任务根据作者的名字  你发布的任务 去获取当前的用户Id
     @RequestMapping("/task/selById")
     public List<Task> selTaskById(String authorId){
         return taskMapper.selTaskById(authorId);

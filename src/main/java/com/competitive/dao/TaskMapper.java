@@ -13,7 +13,7 @@ public interface TaskMapper {
 //    List<List> selAllTask();
 
     //查询任务根据标题
-    @Select("select * from task where task_title=#{task_title}")
+    @Select("select * from task where task_title=#{taskTitle}")
     List<Task> selTaskBytitle(String taskTitle);
 
     //查询任务根据作者的名字
@@ -21,7 +21,7 @@ public interface TaskMapper {
     List<Task> selTaskById(String authorId);
 
     //添加任务
-    @Insert("insert into studio(task_title,task_content,author_id,create_time) values(#{task_title},#{task_content},#{author_id},#{create_time})")
+    @Insert("insert into studio(task_title,task_content,author_id,create_time) values(#{taskTitle},#{taskContent},#{authorId},#{createTime})")
     int insTask(Task task);
 
     //更改任务

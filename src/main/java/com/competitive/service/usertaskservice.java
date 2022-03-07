@@ -1,6 +1,5 @@
 package com.competitive.service;
 
-import com.competitive.dao.UserMapper;
 import com.competitive.dao.UserTaskMapping;
 import com.competitive.pojo.UserTask;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,8 @@ public class usertaskservice {
     @Autowired
     UserTaskMapping userTaskMapper;
 
-    public UserTask selUserId(int userId){
-        return userTaskMapper.selUserId(userId);
+    //查询用户根据id
+    public UserTask SelectUserTaskById(int userId){
+        return userTaskMapper.SelectUserTaskById(userId);
     }
 }
