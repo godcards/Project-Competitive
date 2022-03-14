@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class studioservice {
+public class Studioservice {
     @Autowired
     private StudioMapper studioMapper;
 
@@ -20,7 +20,7 @@ public class studioservice {
         return studioMapper.InsertStudio(studio);
     }
 
-    public int UpdateStudio(int studioId){
-        return studioMapper.UpdateStudio(studioId);
+    public int UpdateStudio(Studio studio){
+        return studioMapper.UpdateStudio(studio);
     }
 }

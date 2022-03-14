@@ -13,6 +13,7 @@ public class Dayliy {
     private int dayId;
     private String dayText;
     private String dayName;
+    private String authorId;
     private Date createTime;
     private Date updateTime;
 }

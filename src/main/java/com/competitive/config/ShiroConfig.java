@@ -20,17 +20,24 @@ public class ShiroConfig {
         //添加内置过滤器
 
         Map<String, String> filterMap = new LinkedHashMap<String,String>();
-        filterMap.put("/user/*","authc");
+//        filterMap.put("/user/*","authc");
+//        //教师可以干的
+//        filterMap.put("/task/Insert","role[teacher]");
+//        filterMap.put("/task/Update","role[teacher]");
+//        filterMap.put("/task/Delete","role[teacher]");
+        //学生可以干的
+        filterMap.put("/user/upduser","authc");
+        filterMap.put("/user/selId","authc");
         filterMap.put("/day/*","authc");
         filterMap.put("/plan/*","authc");
         filterMap.put("/task/*","authc");
         filterMap.put("/studio/*","authc");
         filterMap.put("/main","authc");
-
+        filterMap.put("/grades/*","authc");
 
         bean.setFilterChainDefinitionMap(filterMap);
 
-        bean.setLoginUrl("/login");
+        bean.setLoginUrl("/NotLogged");
 
         return bean;
     }

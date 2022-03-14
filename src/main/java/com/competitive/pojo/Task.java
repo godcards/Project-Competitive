@@ -17,4 +17,6 @@ public class Task {
     private String authorId;
     private Date createTime;
     private Date updateTime;
+    private Date endTime;
+    private Date startTime;
 }

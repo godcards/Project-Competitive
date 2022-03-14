@@ -21,14 +21,16 @@ public interface TaskMapper {
     List<Task> selTaskById(String authorId);
 
     //添加任务
-    @Insert("insert into studio(task_title,task_content,author_id,create_time) values(#{taskTitle},#{taskContent},#{authorId},#{createTime})")
+    @Insert("insert into task(task_title,task_content,author_id,create_time,end_time,start_time) " +
+            "values(#{taskTitle},#{taskContent},#{authorId},#{createTime},#{endTime},#{startTime})")
     int insTask(Task task);
 
     //更改任务
-    @Update("update task set task_title = #{task_title},task_content = #{task_content},update_time = #{update_time} where task_id = #{task_id}")
+    @Update("update task set task_title = #{taskTitle},task_content = #{taskContent}," +
+            "update_time = #{updateTime},start_time = #{startTime},end_time = #{endTime} where task_id = #{taskId}")
     int updTask(Task task);
 
     //删除任务
-    @Delete("delete from task where task_id=#{task_id}")
+    @Delete("delete from task where task_id=#{taskId}")
     int delTask(int taskId);
 }

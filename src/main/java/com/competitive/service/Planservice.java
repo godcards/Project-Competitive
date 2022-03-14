@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class planservice {
+public class Planservice {
 
     @Autowired
     PlanMapper planMapper;
@@ -35,8 +35,8 @@ public class planservice {
     }
 
     //更改计划
-    public int UpdatePlan(int planId){
-        return planMapper.UpdatePlan(planId);
+    public int UpdatePlan(Plan plan){
+        return planMapper.UpdatePlan(plan);
     }
 
 }

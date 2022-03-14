@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class userservice{
+public class Userservice {
 
     @Autowired
     UserMapper userMapper;
 
     //查询用户的id根据用户名
-    public int SelectUserId(String userName){
-        return userMapper.SelectUserId(userName);
+    public int SelectUserId(String authorId){
+        return userMapper.SelectUserId(authorId);
     }
 
     //查询用户所有的信息根据id

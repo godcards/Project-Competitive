@@ -15,9 +15,9 @@ public interface StudioMapper {
     @Select("select studio_name from studio")
     List<String> SelectAllStudio();
 
-    @Insert("insert into studio(studio_name) values(#{studioName})")
+    @Insert("insert into studio(studio_name,school,icon) values(#{studioName},#{school},#{icon})")
     int InsertStudio(Studio studio);
 
-    @Update("update task set studio_name = #{studioName} where studio_id = #{studioId}")
-    int UpdateStudio(int studioId);
+    @Update("update studio set studio_name = #{studioName}, school=#{school}, icon=#{icon} where studio_id = #{studioId}")
+    int UpdateStudio(Studio studio);
 }

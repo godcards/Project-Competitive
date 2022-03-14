@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-    public class dayliyservice {
+    public class Dayliyservice {
 
     @Autowired
     DayliyMapper dayliyMapper;
@@ -34,8 +34,8 @@ import java.util.List;
     }
 
     //删除日报根据name和id
-    public int DeleteDayName(int dayId,String dayName){
-        return dayliyMapper.DeleteDayName(dayName,dayId);
+    public int DeleteDayName(String dayName){
+        return dayliyMapper.DeleteDayName(dayName);
     }
 
 }
